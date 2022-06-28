@@ -1,6 +1,8 @@
 # Baza danych e-handel
 Relacyjna baza danych służy do obsługi portalu internetowego do e-handlu.
 
+Projekt został stworzony korzystając z oprgramowania SQL Developer Data Modeler 21.4.1.
+
 ## Założenia funkcjonalne:
 - Użytkownik musi mieć przypisany jeden z kodów pocztowych znajdujących się w tabeli ‘KodPocztowy’.
 - Każdy użytkownik może zarówno tworzyć aukcje, kupować przedmioty z aukcji oraz licytować na aukcjach.
@@ -179,9 +181,31 @@ ALTER TABLE zamowienia
 
 ### SEKWENCJE
 Poniższe sekwencję służą do generowania kluczy głównych dla poszczególnych tabel.
+```
+CREATE SEQUENCE SUZID INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1;
+
+CREATE SEQUENCE SZID INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1;
+
+CREATE SEQUENCE SAID INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1;
+
+CREATE SEQUENCE SPARID INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1;
+```
 
 ### WYZWALACZE
 Poniższy wyzwalacz automatycznie zmniejsza ilość sztuk dla odpowiedniej aukcji, gdy dodany zostanie rekord do tabeli ‘KupionePrzedmioty’.
+```
+CREATE OR REPLACE TRIGGER AKUALIZACJA_SZTUK 
+AFTER INSERT ON KUPIONEPRZEDMIOTY 
+REFERENCING OLD AS OLD NEW AS NEW
+FOR EACH ROW
+BEGIN
+    update aukcja
+    set ailoscsztuk = (select ailoscsztuk from aukcja where aid=:NEW.aid) - :NEW.kiloscsztuk
+    where aid = :NEW.aid;
+    
+END;
+/
+```
 
 ## Wypełnienie tabel przykładowymi danymi
 
