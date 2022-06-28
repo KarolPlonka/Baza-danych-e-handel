@@ -1,7 +1,7 @@
 # Baza danych e-handel
 Relacyjna baza danych służy do obsługi portalu internetowego do e-handlu.
-<hr style="border:5px solid gray">
-Projekt został stworzony korzystając z oprgramowania SQL Developer Data Modeler 21.4.1.
+
+Projekt został stworzony korzystając z oprgramowania `SQL Developer Data Modeler 21.4.1`.
 
 
 ## Założenia funkcjonalne:
