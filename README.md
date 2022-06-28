@@ -18,8 +18,10 @@ Projekt został stworzony korzystając z oprgramowania SQL Developer Data Modele
 - Aby przypisać klucz główny tabeli należy skorzystać skorzystać z odpowiedniej z wcześniej zdefiniowanych sekwencji.
 
 ## Schemat logiczny
+![logical](images/Logical.png)
 
 ## Schemat relacyjny
+![Relational](images/Relational.png)
 
 ## Skrypty DDL SQL
 
