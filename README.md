@@ -179,7 +179,7 @@ ALTER TABLE zamowienia
         REFERENCES uzytkownik ( uzid );
 ```
 
-### SEKWENCJE
+### Sekwencje
 Poniższe sekwencję służą do generowania kluczy głównych dla poszczególnych tabel.
 ```
 CREATE SEQUENCE SUZID INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1;
@@ -191,7 +191,7 @@ CREATE SEQUENCE SAID INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVAL
 CREATE SEQUENCE SPARID INCREMENT BY 1 MAXVALUE 9999999999999999999999999999 MINVALUE 1;
 ```
 
-### WYZWALACZE
+### Wyzwalacze
 Poniższy wyzwalacz automatycznie zmniejsza ilość sztuk dla odpowiedniej aukcji, gdy dodany zostanie rekord do tabeli ‘KupionePrzedmioty’.
 ```
 CREATE OR REPLACE TRIGGER AKUALIZACJA_SZTUK 
