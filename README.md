@@ -3,7 +3,9 @@ Relacyjna baza danych służy do obsługi portalu internetowego do e-handlu.
 
 Projekt został stworzony korzystając z oprgramowania `SQL Developer Data Modeler 21.4.1`.
 
-Aby przetestować bazę danych należy na serwererze MySQL wykonać dany [SRYPT](skryptDDL.ddl), który stworzy [tabelę](Tabele), relację między nimi, sekwencję oraz wyzwalacz.
+Aby przetestować bazę danych należy:
+1. Na serwererze MySQL wykonać dany [skrpyt](skryptDDL.ddl), który stworzy tabelę, relację między nimi, sekwencję oraz wyzwalacze.
+2. Wypełnić tabele przykładowymi danymi, można skorzystać z następujących - [przykładowe dane](przykladowe_dane.txt).
 
 
 ## Założenia funkcjonalne:
