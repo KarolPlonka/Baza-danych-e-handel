@@ -5,7 +5,7 @@ Projekt został stworzony korzystając z oprgramowania `SQL Developer Data Model
 
 
 ## Założenia funkcjonalne:
-- Użytkownik musi mieć przypisany jeden z kodów pocztowych znajdujących się w tabeli `KodPocztowy`.
+- Użytkownik musi mieć przypisany jeden z kodów pocztowych znajdujących się w tabeli `Kod Pocztowy`.
 - Każdy użytkownik może zarówno tworzyć aukcje, kupować przedmioty z aukcji oraz licytować na aukcjach.
 - Użytkownik może sprzedawać wiele produktów, kupić wiele produktów, licytować wiele produktów, może też tworzyć wiele ofert kupna dla pojedynczej licytacji.
 - Aby kupić produkt, należy pierwszy utworzyć zamówienia, a następnie dodawać do niego kupione przedmioty.
@@ -15,7 +15,7 @@ Projekt został stworzony korzystając z oprgramowania `SQL Developer Data Model
 - Każda aukcja może mieć przypisanych wiele parametrów.
 - Każda kategoria może mieć przypisanych wiele parametrów.
 - Parametry w poszczególnych kategoriach mogą mieć te same nazwy.
-- Dodawanie rekordów do tabeli `KupionePrzedmioty` automatycznie zmniejsza ilość sztuk dla odpowiedniej aukcji o ilość zakupionych sztuk (trigger).
+- Dodawanie rekordów do tabeli `Kupione Przedmioty` automatycznie zmniejsza ilość sztuk dla odpowiedniej aukcji o ilość zakupionych sztuk (trigger).
 - Aby przypisać klucz główny tabeli należy skorzystać skorzystać z odpowiedniej z wcześniej zdefiniowanych sekwencji.
 
 ## Schemat logiczny
