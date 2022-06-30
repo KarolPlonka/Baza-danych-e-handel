@@ -212,6 +212,9 @@ END;
 
 ## Przykładowe zapytania SQL:
 
+<hr/>
+
+
 **1. Najwyższa ofertę, czas i datę jej złożenia dla aukcji (licytacji) o nazwie ‘Opel licytacja’ wraz z nazwa i opisem kategori do której należy.**
 ```
 select max(ooferowanacena), to_char(oczaszlozenia, 'dd-mm-yy hh24:mi'), anazwa, katnazwa, katinfo
@@ -225,6 +228,9 @@ natural join (
 ) 
 group by anazwa, katnazwa, katinfo, oczaszlozenia;
 ```
+
+<hr/>
+
 
 **2. Historia ofert składanych przez użytkownika Jan Kowalski posortowana wg. nazwy oferty oraz czasu złożenia.**
 ```
@@ -241,6 +247,9 @@ SELECT anazwa, ooferowanacena, czas  FROM
 natural join aukcja
 order by anazwa, czas
 ```
+
+<hr/>
+
 
 **3. Imiona, nazwiska oraz pełne adresy użytkowników, którzy kupili w sumie przynajmniej 3 sztuki dowolnych przedmiotów po 01.01.2022.**
 ```
@@ -265,6 +274,8 @@ select uzimie, uznazwisko, kodmiasto, kodpocztowy, uzulica, uznrdomu from
 natural join kodpocztowy;
 ```
 
+<hr/>
+
 
 **4. Identyfikatory użytkowników, którzy licytowali dowolny przedmiot z kategori zaczynającej sie na litere ‘S’.**
 ```
@@ -278,7 +289,10 @@ inner join (
 on oferta.aid = aukcje_S.aid
 ```
 
-**5. Nazwy aukcji oraz jej wszystkie wartości parametrów licytowanych przez największą liczbą osób. **
+<hr/>
+
+
+**5. Nazwy aukcji oraz jej wszystkie wartości parametrów licytowanych przez największą liczbą osób.**
 ```
 select an, p.parnazwa, wwp
 from(
@@ -315,5 +329,9 @@ from(
 join parametr p
 on p.parid = wp
 ```
+
+<hr/>
+
+
 
 
